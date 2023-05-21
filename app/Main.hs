@@ -1,8 +1,8 @@
 module Main (main) where
 
 import Lipsum
-import Options (amount, optionsParser, start, textUnit)
 import Options.Applicative (execParser)
+import Opts (Opts (..), optionsParser)
 
 main :: IO ()
 main = do

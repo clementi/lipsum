@@ -9,7 +9,7 @@ where
 import Data.Aeson
 import Data.Aeson.Types
 import Network.HTTP.Conduit
-import Options (TextUnit)
+import Opts (TextUnit)
 
 data LipsumResponse = LipsumResponse {text :: String, summary :: String} deriving (Show)
 
