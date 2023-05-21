@@ -36,7 +36,7 @@ getText textUnit amount start = do
 
 buildUrl :: TextUnit -> Int -> Bool -> String
 buildUrl textUnit amount start =
-  "https://lipsum.com/feed/json?what=" ++ toQueryParam textUnit ++ "&amount=" ++ show amount ++ "&start=" ++ yesno start
+  "https://lipsum.com/feed/json?what=" ++ toQueryParam textUnit ++ "&amount=" ++ show amount ++ "&start=" ++ yesno (not start)
 
 toQueryParam :: TextUnit -> String
 toQueryParam Paragraphs = "paras"
