@@ -9,7 +9,7 @@ data Options = Options
   }
   deriving (Eq, Show)
 
-data TextUnit = Paragraphs | Words | Bytes deriving (Eq, Show, Enum)
+data TextUnit = Paragraphs | Words | Bytes deriving (Eq, Enum)
 
 instance Read TextUnit where
   readsPrec _ val =
@@ -20,6 +20,11 @@ instance Read TextUnit where
         if take (length attempt) val == attempt
           then [(result, drop (length attempt) val)]
           else tryParse xs
+
+instance Show TextUnit where
+  show Paragraphs = "paras"
+  show Words = "words"
+  show Bytes = "bytes"
 
 optionsParser :: ParserInfo Options
 optionsParser =

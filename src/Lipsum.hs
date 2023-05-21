@@ -9,7 +9,7 @@ where
 import Data.Aeson
 import Data.Aeson.Types
 import Network.HTTP.Conduit
-import Options (TextUnit (Bytes, Paragraphs, Words))
+import Options (TextUnit)
 
 data LipsumResponse = LipsumResponse {text :: String, summary :: String} deriving (Show)
 
@@ -36,12 +36,7 @@ getText textUnit amount start = do
 
 buildUrl :: TextUnit -> Int -> Bool -> String
 buildUrl textUnit amount start =
-  "https://lipsum.com/feed/json?what=" ++ toQueryParam textUnit ++ "&amount=" ++ show amount ++ "&start=" ++ yesno (not start)
-
-toQueryParam :: TextUnit -> String
-toQueryParam Paragraphs = "paras"
-toQueryParam Words = "words"
-toQueryParam Bytes = "bytes"
+  "https://lipsum.com/feed/json?what=" ++ show textUnit ++ "&amount=" ++ show amount ++ "&start=" ++ yesno (not start)
 
 yesno :: Bool -> String
 yesno True = "yes"
