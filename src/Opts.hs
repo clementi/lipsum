@@ -1,4 +1,4 @@
-module Opts (Opts (..), optionsParser, TextUnit (Paragraphs, Words, Bytes)) where
+module Opts (Opts (..), optionsParser, TextUnit (..)) where
 
 import Options.Applicative
 
@@ -38,6 +38,6 @@ versionOption = infoOption "0.0.0" (long "version" <> short 'V' <> help "Show ve
 programOptions :: Parser Opts
 programOptions =
   Opts
-    <$> option auto (long "text-unit" <> short 'u' <> metavar "TEXT_UNIT" <> value Paragraphs <> help "Set the text unit (paras, words, or bytes)")
-    <*> option auto (long "amount" <> short 'a' <> metavar "AMOUNT " <> value 2 <> help "Set the amount of text units")
+    <$> option auto (long "unit" <> short 'u' <> metavar "UNIT" <> value Paragraphs <> help "Set the text unit (paras, words, or bytes)")
+    <*> option auto (long "amount" <> short 'a' <> metavar "AMOUNT" <> value 2 <> help "Set the amount of text units")
     <*> switch (long "start" <> short 's' <> help "Do not start with 'Lorem ipsum...'")
