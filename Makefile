@@ -1,6 +1,9 @@
 build:
 	stack build
 
+run:
+	stack run
+
 clean:
 	stack clean
 	rm -rf ./release
