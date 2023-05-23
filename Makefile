@@ -2,7 +2,7 @@ build:
 	stack build
 
 run:
-	stack run
+	stack run -- $(ARGS)
 
 clean:
 	stack clean
