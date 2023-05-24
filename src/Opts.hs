@@ -1,6 +1,8 @@
 module Opts (Opts (..), optionsParser, TextUnit (..)) where
 
+import Data.Version (showVersion)
 import Options.Applicative
+import Paths_lipsum (version)
 
 data Opts = Opts
   { textUnit :: !TextUnit,
@@ -33,7 +35,7 @@ optionsParser =
     (fullDesc <> progDesc "Get some 'Lorem ipsum' text" <> header "lipsum - a CLI to the Lipsum API (https://lipsum.com)")
 
 versionOption :: Parser (a -> a)
-versionOption = infoOption "0.0.0" (long "version" <> short 'V' <> help "Show version")
+versionOption = infoOption (showVersion version) (long "version" <> short 'V' <> help "Show version")
 
 programOptions :: Parser Opts
 programOptions =
