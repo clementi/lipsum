@@ -4,7 +4,7 @@ CLI to the [Lipsum.com](https://lipsum.com) API.
 
 ## Usage
 
-```sh
+```
 Usage: lipsum [-V|--version] [-u|--unit UNIT] (-a|--amount AMOUNT) [-s|--start]
 
   Get some 'Lorem ipsum' text
