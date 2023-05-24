@@ -41,7 +41,7 @@ library:
   source-dirs: src
 
 executables:
-  lipsum-exe:
+  lipsum:
     main: Main.hs
     source-dirs: app
     ghc-options:
