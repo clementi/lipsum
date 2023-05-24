@@ -30,7 +30,7 @@ optionsParser :: ParserInfo Opts
 optionsParser =
   info
     (helper <*> versionOption <*> programOptions)
-    (fullDesc <> progDesc "lipsum" <> header "lipsum")
+    (fullDesc <> progDesc "Get some 'Lorem ipsum' text" <> header "lipsum - a CLI to the Lipsum API (https://lipsum.com)")
 
 versionOption :: Parser (a -> a)
 versionOption = infoOption "0.0.0" (long "version" <> short 'V' <> help "Show version")
