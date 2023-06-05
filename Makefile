@@ -10,3 +10,6 @@ clean:
 
 release:
 	stack build --ghc-options -O2
+
+install: release
+	stack install
