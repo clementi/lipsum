@@ -36,7 +36,7 @@ getText textUnit amount start = do
 
 buildUrl :: TextUnit -> Int -> Bool -> String
 buildUrl textUnit amount start =
-  "https://lipsum.com/feed/json?what=" ++ show textUnit ++ "&amount=" ++ show amount ++ "&start=" ++ yesno (not start)
+  "https://lipsum.com/feed/json?what=" <> show textUnit <> "&amount=" <> show amount <> "&start=" <> yesno (not start)
 
 yesno :: Bool -> String
 yesno True = "yes"
